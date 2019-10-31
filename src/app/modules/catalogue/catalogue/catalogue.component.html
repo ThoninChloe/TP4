@@ -1,0 +1,35 @@
+
+<table class="table table-sm">
+  <thead>
+    <tr>
+      <th scope="col">#ID</th>
+      <th scope="col">Nom</th>
+      <th scope="col">Prix</th>
+      <th scope="col">Quantite</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of cat | async">
+      <td >{{ item.ref }}</td>
+      <td >{{ item.produit }}</td>
+      <td >{{ item.prix }}</td>
+      <td >{{ item.qte }}</td>
+      <td>
+        <div [class.alternate-button]="isAlternateMode">
+          <button mat-button (click)="onClick(item.ref,item.produit,item.prix,item.qte)">ADD</button>
+        </div>
+      </td>
+      <td>
+          <button mat-button (click)="onDelClick(item.ref,item.produit,item.prix,item.qte)">DEL</button>
+      </td>
+      <td>
+          <button mat-button ><a [routerLink] = "['/catalogue/detail',item.ref]"  > [+]</a> </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<router-outlet></router-outlet>
