@@ -47,6 +47,8 @@ function inscription(Request $request, Response $response, array $args)
           'email' => $body['email'],
           'civilite' => $body['civilite'],
           'login' => $body['login']
+          'mdp' => $body['mdp']
+          'mdp2' => $body['mdp2']
     );
 
     return json_encode($user);
