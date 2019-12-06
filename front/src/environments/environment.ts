@@ -4,9 +4,13 @@
 
 export const environment = {
   production: false,
-  mode: 'Local',
-  urlApiCatalogue :  "/assets/mock/mock.json"
+  produits : 'http://node13.codenvy.io:38533/TP5/back/index.php/products',
+  inscription : 'http://node13.codenvy.io:38533/TP5/back/index.php/inscription',
+  connexion : 'http://node13.codenvy.io:38533/TP5/back/index.php/login'
+
+  //urlApiCatalogue :  "/assets/mock/mock.json"
 };
+
 
 /*
  * For easier debugging in development mode, you can import the following file
