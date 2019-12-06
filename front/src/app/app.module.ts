@@ -11,13 +11,15 @@ import { FooterComponent } from './pageStructure/footer/footer.component';
 import { NavbarMenuComponent } from './pageStructure/header/navbar-menu/navbar-menu.component';
 
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     BodyComponent,
     FooterComponent,
-    NavbarMenuComponent
+    NavbarMenuComponent,
   ],
   imports: [
     BrowserModule,

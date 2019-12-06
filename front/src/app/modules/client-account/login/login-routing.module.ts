@@ -1,15 +1,14 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
-import { ListePanierComponent } from './liste-panier/liste-panier.component';
+import { LoginComponent } from './login.component';
 
 
 const routes: Routes = [
   {
     path: '',
-    component: ListePanierComponent,
-    
-  }
+    component: LoginComponent,
+  },
 ];
 
 @NgModule({
@@ -17,7 +16,7 @@ const routes: Routes = [
     HttpClientModule],
   exports: [RouterModule]
 })
-export class PanierComponentRoutingModule { }
+export class LoginRoutinModule { }
 
 
 /*

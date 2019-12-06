@@ -4,7 +4,6 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { DetailsArticleComponent } from './details-article.component';
 import { DetailsRoutingModule } from './details-article-routing.module';
-import { ApiServiceService } from './../../../../apiService.service';
 
 
 
@@ -15,7 +14,6 @@ import { ApiServiceService } from './../../../../apiService.service';
     CommonModule,
     HttpClientModule
   ],
-  providers: [ApiServiceService],
 
 })
 export class DetailsArticleModule { }

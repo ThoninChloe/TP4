@@ -1,23 +1,27 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
-import { ListePanierComponent } from './liste-panier/liste-panier.component';
+import { InscriptionComponent } from './inscription/inscription.component';
 
 
 const routes: Routes = [
   {
     path: '',
-    component: ListePanierComponent,
-    
+    component: InscriptionComponent,
+  },
+  { path: 'connexion',
+  loadChildren: () => import('./login/login.module').then(m => m.LoginModule) 
   }
+ 
+  
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes),
-    HttpClientModule],
+    HttpClientModule,],
   exports: [RouterModule]
 })
-export class PanierComponentRoutingModule { }
+export class ClientRoutingModule { }
 
 
 /*

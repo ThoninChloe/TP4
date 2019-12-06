@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
 import { ActivatedRoute, Router } from '@angular/router'
-import { ApiServiceService} from '../../../../apiService.service'
 import { Observable  } from 'rxjs';
 import { Article } from 'src/app/models/article';
 
@@ -18,10 +17,9 @@ export class DetailsArticleComponent implements OnInit {
   articleTab : Article[];
   catObservable : Observable<Article[]>;
 
-  constructor(private route:ActivatedRoute,private apiServiceService : ApiServiceService,private router:Router) {
-    this.cat = apiServiceService.getCatalogue();
+  constructor(private route:ActivatedRoute,private router:Router) {
+    
     this.id = this.route.snapshot.params.id; 
-    this.catObservable = this.apiServiceService.getProduct(this.id);
 
    }
 
@@ -29,8 +27,6 @@ export class DetailsArticleComponent implements OnInit {
   ngOnInit() {
     this.cat.subscribe(value => this.articleTab = value);
     this.id = this.route.snapshot.params.id; 
-    this.catObservable = this.apiServiceService.getProduct(this.id);
-
   }
 
 }

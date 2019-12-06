@@ -4,7 +4,7 @@ import { Observable  } from 'rxjs';
 import { Article} from '../../../models/article';
 import { AddArticle } from '../../../actions/addArticle';
 import { DelArticle } from '../../../actions/delArticle';
-import { ApiServiceService} from './../../../../apiService.service'
+import { CatalogueService} from './catalogueService'
 
 
 
@@ -14,21 +14,23 @@ import { ApiServiceService} from './../../../../apiService.service'
   styleUrls: ['./catalogue.component.css']
 })
 export class CatalogueComponent  {
+
+  public produits : Article[] = [];
+  private produitsFiltres : Article[] = [];
+
+
   ref: string = 'Angular';
   produit : string = '123456';
   prix : number = 200.0;
   qte : number = 2;
 
   
-  panier: Observable<Article>;
-  cat : Observable<Article[]>;
+ 
   mode: any;
 
 
-  constructor (private store : Store,private apiServiceService : ApiServiceService){
-    this.panier = this.store.select(state => state.panier.panier);
-    this.cat = apiServiceService.getCatalogue ();
-  }
+  constructor(public CatalogueService : CatalogueService, private store : Store) { }
+
 
 
   onClick(ref, produit,prix,qte) {
@@ -51,6 +53,12 @@ export class CatalogueComponent  {
 
 
   ngOnInit() {
+    this.CatalogueService.getProduits().subscribe(response => {
+        this.produits = response;
+        this.produitsFiltres = response; 
+        console.log(this.produits);
+      }
+    ); 
   }
 
 }

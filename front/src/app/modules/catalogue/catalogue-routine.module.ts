@@ -1,11 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
-import { ApiServiceService} from './../../../apiService.service';
-import { DetailsArticleComponent } from './details-article/details-article.component';
 import { CatalogueComponent } from './catalogue/catalogue.component';
-import { PanierComponent } from './panier/panier.component';
-import { DetailsArticleModule } from './details-article/details-article.module';
 
 
 const routes: Routes = [
@@ -21,7 +17,6 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forChild(routes),
     HttpClientModule],
-    providers: [ApiServiceService],
   exports: [RouterModule]
 })
 export class CatalogueComponentRoutingModule { }
