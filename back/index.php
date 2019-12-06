@@ -38,17 +38,18 @@ function getProducts(Request $request, Response $response, array $args)
 function inscription(Request $request, Response $response, array $args)  
 {
     $body = $request->getParsedBody(); // Parse le body
-    $user = array('nom' => $body['nom'], 
+    $user = array(
+          'civilite' => $body['civilite'],
+          'nom' => $body['nom'], 
           'prenom' => $body['prenom'],
           'adresse' => $body['adresse'],
           'codePostal' => $body['codePostal'],
           'ville' => $body['ville'],
           'telephone' => $body['telephone'],
-          'email' => $body['email'],
-          'civilite' => $body['civilite'],
-          'login' => $body['login']
-          'mdp' => $body['mdp']
-          'mdp2' => $body['mdp2']
+          'email' => $body['email'],    
+          'login' => $body['login'],
+          'mdp' => $body['mdp'],
+          'mdp2' => $body['mdp2'],
     );
 
     return json_encode($user);
